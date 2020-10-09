@@ -17,21 +17,6 @@ router.get("/", (request, response) => {
         })
 })
 
-router.get("/:id", (request, response) => {
-    const { id } = request.params;
-    Tasks.getById(id)
-        .then(tasks => {
-            if (tasks) {
-                response.status(200).json(tasks);
-            } else {
-            response.status(404).json({ error: error.message });
-            }
-        })
-        .catch(error => {
-            response.status(500).json({ error: error.message });
-        });
-});
-
 router.post("/", (request, response) => {
     const taskData = request.body;
     Tasks.add(taskData)
