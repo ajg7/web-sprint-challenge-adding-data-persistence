@@ -5,24 +5,24 @@ const Projects = require("./project-model");
 
 const router = express.Router();
 
-
 router.get("/", (request, response) => {
+    console.log("c")
     Projects.get()
         .then(projects => {
             response.status(200).json(projects)
         })
-        .catch(error=> {
-            console.log(errror)
-            response.status(500).json({error: error.message})
+        .catch(error => {
+            console.log(error)
+            response.status(500).json({message: error.message})
         })
 })
 
 router.get("/:id", (request, response) => {
-    const { id } = request.params;
-    Projects.getById(id)
+    console.log("b")
+    Projects.getById(request.params.id)
         .then(projects => {
             if (projects) {
-                response.status(200).json(projects);
+                response.json(projects);
             } else {
             response.status(404).json({ error: error.message });
             }
@@ -33,6 +33,7 @@ router.get("/:id", (request, response) => {
 });
 
 router.post("/", (request, response) => {
+    console.log("a")
     const projectData = request.body;
     Projects.add(projectData)
         .then(ids => {

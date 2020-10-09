@@ -12,7 +12,7 @@ router.get("/", (request, response) => {
             response.status(200).json(resources)
         })
         .catch(error=> {
-            console.log(errror)
+            console.log(error)
             response.status(500).json({error: error.message})
         })
 })
