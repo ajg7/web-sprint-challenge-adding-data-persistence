@@ -12,8 +12,8 @@ function get() {
         .select("projects.name", "projects.description", "tasks.description")
 }
 
-function add(project) {
-    return db("tasks").insert(project, "id")
+function add(task) {
+    return db("tasks").insert(task, "id")
         .then(ids => {
             const id = ids[0];
             return db("tasks").where({ id }).first();

@@ -12,7 +12,7 @@ function get() {
 }
 
 function getById(id) {
-    return db("resources").where({ id }).first();
+    return db("resources").where("id", "=", id);
 }
 
 function add(project) {
