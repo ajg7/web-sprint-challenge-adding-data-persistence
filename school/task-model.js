@@ -2,14 +2,19 @@ const express = require("express");
 const db = require("../data/db-config");
 
 module.exports = {
+    findSorted,
     find,
     add
 }
 
-function find() {
+function findSorted() {
     return db("tasks")
         .join("projects", "projects.taskID", "=", "tasks.projectID")
         .select("projects.name", "tasks.description", "projects.description")
+}
+
+function find() {
+    return db("tasks")
 }
 
 function add(task) {
