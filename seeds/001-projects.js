@@ -27,4 +27,5 @@ exports.seed = function(knex) {
       completed: false,
     },
   ]
+  return knex("projects").insert(projects);
 };
