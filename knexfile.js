@@ -7,6 +7,12 @@ module.exports = {
     useNullAsDefault: true,
     connection: {
       filename: './data/school.db3'
+    },
+    migrations: {
+      directory: './data/migrations'
+    },
+    seeds: {
+      directory: "./data/seeds"
     }
   },
 
@@ -22,7 +28,10 @@ module.exports = {
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
+      directory: './migrations'
+    },
+    seeds: {
+      directory: "./seeds"
     }
   }
 

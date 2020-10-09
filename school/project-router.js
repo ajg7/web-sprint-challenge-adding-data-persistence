@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.get("/", (request, response) => {
     console.log("c")
-    Projects.get()
+    Projects.find()
         .then(projects => {
             response.status(200).json(projects)
         })
@@ -18,7 +18,6 @@ router.get("/", (request, response) => {
 })
 
 router.get("/:id", (request, response) => {
-    console.log("b")
     Projects.getById(request.params.id)
         .then(projects => {
             if (projects) {

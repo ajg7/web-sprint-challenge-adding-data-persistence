@@ -2,12 +2,12 @@ const express = require("express");
 const db = require("../data/db-config");
 
 module.exports = {
-    get,
+    find,
     getById,
     add
 }
 
-function get() {
+function find() {
     return db("resources");
 }
 

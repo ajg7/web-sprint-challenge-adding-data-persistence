@@ -14,10 +14,10 @@ server.get("/", (request, response) => {
     response.status(200).json({Frankenstein: "It's alive!!!!!"});
 })
 
-server.get("/projects", ProjectRouter);
+server.use("/projects", ProjectRouter);
 
-server.get("/resources", ResourceRouter)
+server.use("/resources", ResourceRouter)
 
-server.get("/tasks", TaskRouter)
+server.use("/tasks", TaskRouter)
 
 module.exports = server;

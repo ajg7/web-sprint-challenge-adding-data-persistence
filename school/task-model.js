@@ -2,11 +2,11 @@ const express = require("express");
 const db = require("../data/db-config");
 
 module.exports = {
-    get,
+    find,
     add
 }
 
-function get() {
+function find() {
     return db("tasks")
         .join("tasks", "projects.taskID", "=", "tasks.projectID")
         .select("projects.name", "projects.description", "tasks.description")

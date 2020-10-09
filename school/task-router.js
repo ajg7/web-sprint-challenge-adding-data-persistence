@@ -7,7 +7,7 @@ const router = express.Router();
 
 
 router.get("/", (request, response) => {
-    Tasks.get()
+    Tasks.find()
         .then(tasks => {
             response.status(200).json(tasks)
         })
