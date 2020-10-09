@@ -7,7 +7,9 @@ module.exports = {
 }
 
 function get() {
-    return db("tasks");
+    return db("tasks")
+        .join("tasks", "projects.taskID", "=", "tasks.projectID")
+        .select("projects.name", "projects.description", "tasks.description")
 }
 
 function add(project) {
