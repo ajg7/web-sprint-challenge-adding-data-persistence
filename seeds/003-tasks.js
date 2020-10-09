@@ -4,7 +4,7 @@ exports.seed = function(knex) {
     {
       description: "Make component",
       notes: "",
-      completed: true, 
+      completed: false, 
       projectID: 1
     },
     {
@@ -22,7 +22,7 @@ exports.seed = function(knex) {
     {
       description: "Make an API request",
       notes: "",
-      completed: true,
+      completed: false,
       projectID: 4
     },
     {
