@@ -1,13 +1,30 @@
 
 exports.seed = function(knex) {
-  // Deletes ALL existing entries
-  return knex('table_name').del()
-    .then(function () {
-      // Inserts seed entries
-      return knex('table_name').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
-      ]);
-    });
+  const projects = [
+    {
+      name: "React Todo List",
+      description: "Make a todo list in react",
+      completed: true,
+    },
+    {
+      name: "Weather App",
+      description: "Make a weather app in react",
+      completed: true,
+    },
+    {
+      name: "Calculator",
+      description: "Make a calculator using React-Redux",
+      completed: false,
+    },
+    {
+      name: "Coronavirus Tracker",
+      description: "Make a coronavirus tracker using the API and React-Redux",
+      completed: true,
+    },
+    {
+      name: "Server",
+      description: "Make a server in Node JS",
+      completed: false,
+    },
+  ]
 };
