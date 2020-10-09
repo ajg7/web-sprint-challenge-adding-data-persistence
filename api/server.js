@@ -14,7 +14,7 @@ server.get("/", (request, response) => {
     response.status(200).json({Frankenstein: "It's alive!!!!!"});
 })
 
-// server.get("/api/projects", ProjectRouter)
+server.get("/projects", ProjectRouter);
 
 // server.get("/api/resources", ResourceRouter)
 
