@@ -16,8 +16,8 @@ server.get("/", (request, response) => {
 
 server.get("/projects", ProjectRouter);
 
-// server.get("/api/resources", ResourceRouter)
+server.get("/resources", ResourceRouter)
 
-// server.get("/api/tasks", TaskRouter)
+server.get("/tasks", TaskRouter)
 
 module.exports = server;
